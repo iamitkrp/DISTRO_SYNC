@@ -1,0 +1,2 @@
+[console_scripts]
+distrosync = distrosync.cli:main

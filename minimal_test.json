@@ -1,0 +1,11 @@
+{
+  "metadata": {
+    "source_distro": "endeavouros",
+    "distro_name": "EndeavourOS",
+    "distro_version": "rolling",
+    "export_date": "2025-03-26T18:45:24"
+  },
+  "packages": [
+    "neofetch"
+  ]
+}
