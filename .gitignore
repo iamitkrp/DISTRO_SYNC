@@ -30,10 +30,36 @@ ENV/
 
 # DistroSync specific
 distrosync.log
-*.json
+test_export.json
+minimal_test.json
+test_install.json
 verification.log
 test_output.log
 
-# Misc
+# Media files to include
+!media/*.png
+!media/*.jpg
+!media/*.gif
+
+# Temporary files
+*.swp
+*.swo
+*~
 .DS_Store
+Thumbs.db
+
+# Environment
 .env
+.env.local
+.env.*.local
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Distribution
+*.tar.gz
+*.zip
+*.deb
+*.rpm

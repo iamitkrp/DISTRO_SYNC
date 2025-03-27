@@ -14,6 +14,24 @@ A tool to sync package installations across Linux distributions. DistroSync help
 - User-friendly interface with progress indicators
 - Desktop integration (launch from application menu)
 
+## Screenshots
+
+### Desktop Integration
+![Desktop Integration](media/ds_desktop_1.png)
+*DistroSync can be launched from your desktop environment*
+
+### Package Export
+![Exporting Packages](media/exporting_2.png)
+*Export installed packages with detailed progress*
+
+### Package Installation
+![Installation Process](media/Installing.png)
+*Installing packages with interactive confirmation*
+
+### Installation Complete
+![Installation Complete](media/installing-final.png)
+*Successful package installation*
+
 ## Installation
 
 ### Method 1: Desktop Installation (Recommended)
@@ -26,8 +44,8 @@ cd distrosync
 
 2. Run the installation script:
 ```bash
-chmod +x install.sh
-./install.sh
+chmod +x scripts/install.sh
+sudo ./scripts/install.sh
 ```
 
 This will:
@@ -108,8 +126,12 @@ distrosync --debug export -o my_packages.json
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit a Pull Request. See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for development guidelines.
+
+## Version History
+
+See [CHANGELOG.md](docs/CHANGELOG.md) for version history and updates.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

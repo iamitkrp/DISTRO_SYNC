@@ -15,6 +15,12 @@ distrosync/
 │   ├── launcher.py          # Desktop integration launcher
 │   └── package_manager.py   # Package management operations
 │
+├── media/                    # Screenshots and images
+│   ├── ds_desktop_1.png     # Desktop integration screenshot
+│   ├── exporting_2.png      # Package export process
+│   ├── Installing.png       # Installation process
+│   └── installing-final.png # Installation complete
+│
 ├── scripts/                  # Installation and maintenance scripts
 │   ├── install.sh           # Installation script
 │   ├── uninstall.sh         # Uninstallation script
@@ -60,6 +66,16 @@ pip install -e .
 - Keep functions focused and small
 - Write tests for new functionality
 
+## Screenshots and Media
+
+When adding screenshots or media files:
+
+1. Place files in the `media/` directory
+2. Use descriptive filenames with context (e.g., `feature_name_1.png`)
+3. Optimize images for web viewing
+4. Update README.md with new screenshots
+5. Include alt text for accessibility
+
 ## Testing
 
 Run tests using pytest:
@@ -76,12 +92,18 @@ python -m pytest tests/
 5. Ensure all tests pass
 6. Submit a pull request
 
-## Building Documentation
+## Documentation
 
 Documentation is written in Markdown. Key files:
 - README.md: Main project documentation
 - CHANGELOG.md: Version history and changes
 - CONTRIBUTING.md: Development guide (this file)
+
+Update documentation when:
+- Adding new features
+- Changing existing functionality
+- Adding new screenshots
+- Updating installation instructions
 
 ## Release Process
 
