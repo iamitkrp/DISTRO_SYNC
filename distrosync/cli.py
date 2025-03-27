@@ -6,6 +6,7 @@ import sys
 import logging
 import click
 from pathlib import Path
+from . import __version__
 from .detector import DistroDetector
 from .package_manager import PackageManager
 from .config import ConfigManager
@@ -31,9 +32,9 @@ def setup_logging(debug=False):
 def print_banner():
     """Print welcome banner."""
     click.clear()
-    click.secho("""
+    click.secho(f"""
 ╔═══════════════════════════════════════════╗
-║             DistroSync v0.1.0             ║
+║             DistroSync v{__version__:<16}║
 ║    Sync packages across Linux distros     ║
 ╚═══════════════════════════════════════════╝
     """, fg='blue', bold=True)
@@ -48,6 +49,7 @@ def confirm_action(packages, action):
     return click.confirm(f"\nDo you want to proceed with {action}?")
 
 @click.group(invoke_without_command=True)
+@click.version_option(version=__version__, prog_name="DistroSync")
 @click.option('--debug/--no-debug', default=False, help='Enable debug logging')
 @click.pass_context
 def main(ctx, debug):

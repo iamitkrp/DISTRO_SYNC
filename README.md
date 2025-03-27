@@ -11,10 +11,31 @@ A tool to sync package installations across Linux distributions. DistroSync help
   - dnf (Fedora/RHEL)
   - pacman (Arch/Manjaro/EndeavourOS)
   - zypper (openSUSE)
+- User-friendly interface with progress indicators
+- Desktop integration (launch from application menu)
 
 ## Installation
 
-### From Source
+### Method 1: Desktop Installation (Recommended)
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/distrosync.git
+cd distrosync
+```
+
+2. Run the installation script:
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+This will:
+- Install DistroSync system-wide
+- Create a desktop entry
+- Make it available in your application menu
+
+### Method 2: Development Installation
 
 1. Clone the repository:
 ```bash
@@ -35,41 +56,30 @@ pip install -e .
 
 ## Usage
 
-### Export Packages
+### From Application Menu
+
+1. Open your application menu
+2. Search for "DistroSync"
+3. Click to launch in terminal
+
+### From Terminal
+
+#### Export Packages
 
 To export your currently installed packages:
 
 ```bash
-sudo venv/bin/distrosync export -o my_packages.json
+distrosync export -o my_packages.json
 ```
 
-This will create a JSON file containing your package list. Example output:
+This will create a JSON file containing your package list.
 
-```json
-{
-  "metadata": {
-    "source_distro": "endeavouros",
-    "distro_name": "EndeavourOS",
-    "distro_version": "rolling",
-    "export_date": "2025-03-25T11:44:14"
-  },
-  "packages": [
-    "base",
-    "base-devel",
-    "brave-bin",
-    "firefox",
-    "git",
-    ...
-  ]
-}
-```
-
-### Import Packages
+#### Import Packages
 
 To install packages from a saved configuration:
 
 ```bash
-sudo venv/bin/distrosync install -f my_packages.json
+distrosync install -f my_packages.json
 ```
 
 This will detect your current distribution and install the packages using the appropriate package manager.
@@ -79,7 +89,7 @@ This will detect your current distribution and install the packages using the ap
 To see detailed logging information, use the --debug flag:
 
 ```bash
-sudo venv/bin/distrosync --debug export -o my_packages.json
+distrosync --debug export -o my_packages.json
 ```
 
 ## Requirements

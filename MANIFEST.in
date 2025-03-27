@@ -1,0 +1,35 @@
+# Documentation
+include README.md
+include LICENSE
+include docs/CHANGELOG.md
+include docs/CONTRIBUTING.md
+
+# Installation and scripts
+include scripts/install.sh
+include scripts/uninstall.sh
+include scripts/cleanup.sh
+include scripts/check_installation.sh
+
+# Desktop integration
+include desktop/distrosync.desktop
+
+# Development
+include requirements-dev.txt
+
+# Package files
+recursive-include distrosync *.py
+
+# Exclude unnecessary files
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *.pyd
+global-exclude __pycache__
+global-exclude *.so
+global-exclude .*.swp
+global-exclude .DS_Store
+global-exclude .env
+global-exclude .venv
+global-exclude venv
+global-exclude .git*
+global-exclude *.log
+global-exclude *.json

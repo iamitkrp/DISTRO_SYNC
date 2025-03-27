@@ -1,22 +1,36 @@
 Metadata-Version: 2.4
 Name: distrosync
 Version: 0.1.0
-Summary: A tool to sync package installations across Linux distributions
+Summary: Sync package installations across Linux distributions
 Home-page: https://github.com/yourusername/distrosync
-Author: Amit
-Classifier: Programming Language :: Python :: 3
+Author: DistroSync Contributors
+Author-email: your.email@example.com
+Keywords: linux package manager sync distribution
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: System Administrators
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: System :: Installation/Setup
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: System :: Package Management
 Requires-Python: >=3.8
 Description-Content-Type: text/markdown
 License-File: LICENSE
 Requires-Dist: click>=8.0.0
 Requires-Dist: distro>=1.7.0
 Dynamic: author
+Dynamic: author-email
 Dynamic: classifier
 Dynamic: description
 Dynamic: description-content-type
 Dynamic: home-page
+Dynamic: keywords
 Dynamic: license-file
 Dynamic: requires-dist
 Dynamic: requires-python
@@ -35,10 +49,31 @@ A tool to sync package installations across Linux distributions. DistroSync help
   - dnf (Fedora/RHEL)
   - pacman (Arch/Manjaro/EndeavourOS)
   - zypper (openSUSE)
+- User-friendly interface with progress indicators
+- Desktop integration (launch from application menu)
 
 ## Installation
 
-### From Source
+### Method 1: Desktop Installation (Recommended)
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/distrosync.git
+cd distrosync
+```
+
+2. Run the installation script:
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+This will:
+- Install DistroSync system-wide
+- Create a desktop entry
+- Make it available in your application menu
+
+### Method 2: Development Installation
 
 1. Clone the repository:
 ```bash
@@ -59,41 +94,30 @@ pip install -e .
 
 ## Usage
 
-### Export Packages
+### From Application Menu
+
+1. Open your application menu
+2. Search for "DistroSync"
+3. Click to launch in terminal
+
+### From Terminal
+
+#### Export Packages
 
 To export your currently installed packages:
 
 ```bash
-sudo venv/bin/distrosync export -o my_packages.json
+distrosync export -o my_packages.json
 ```
 
-This will create a JSON file containing your package list. Example output:
+This will create a JSON file containing your package list.
 
-```json
-{
-  "metadata": {
-    "source_distro": "endeavouros",
-    "distro_name": "EndeavourOS",
-    "distro_version": "rolling",
-    "export_date": "2025-03-25T11:44:14"
-  },
-  "packages": [
-    "base",
-    "base-devel",
-    "brave-bin",
-    "firefox",
-    "git",
-    ...
-  ]
-}
-```
-
-### Import Packages
+#### Import Packages
 
 To install packages from a saved configuration:
 
 ```bash
-sudo venv/bin/distrosync install -f my_packages.json
+distrosync install -f my_packages.json
 ```
 
 This will detect your current distribution and install the packages using the appropriate package manager.
@@ -103,7 +127,7 @@ This will detect your current distribution and install the packages using the ap
 To see detailed logging information, use the --debug flag:
 
 ```bash
-sudo venv/bin/distrosync --debug export -o my_packages.json
+distrosync --debug export -o my_packages.json
 ```
 
 ## Requirements

@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=DistroSync
+GenericName=Package Synchronizer
+Comment=Sync packages across Linux distributions
+Exec=/opt/distrosync/venv/bin/python /opt/distrosync/distrosync/launcher.py
+Icon=system-software-install
+Terminal=false
+Categories=System;PackageManager;
+Keywords=package;sync;linux;distro;
+StartupNotify=true

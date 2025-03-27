@@ -3,7 +3,7 @@
     "source_distro": "endeavouros",
     "distro_name": "EndeavourOS",
     "distro_version": "rolling",
-    "export_date": "2025-03-26T19:10:30.755259"
+    "export_date": "2025-03-27T16:44:01.852379"
   },
   "packages": [
     "accountsservice",
@@ -75,6 +75,7 @@
     "haruna",
     "haveged",
     "hdparm",
+    "htop",
     "hwdetect",
     "hwinfo",
     "inetutils",
@@ -193,6 +194,7 @@
     "systemd-sysvcompat",
     "texinfo",
     "tldr",
+    "tree",
     "ttf-bitstream-vera",
     "ttf-dejavu",
     "ttf-liberation",
